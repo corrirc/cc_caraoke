@@ -32,7 +32,7 @@ class RoomsTest < MiniTest::Test
     assert_equal(40, @room1.price)
   end
 
-  def test_guest_array()
+  def test_guest_in_room_array()
     assert_equal(0, @room1.guests_array)
   end
 
@@ -40,17 +40,17 @@ class RoomsTest < MiniTest::Test
     assert_equal(0, @room1.song_array)
   end
 
-  # def test_add_guest()
-  #   guest1 = Guests.new( "Tony" )
-  #   @room1.add_guest(guest1)
-  #   assert_equal(1, @room1.guests_array)
-  # end
+  def test_add_guest()
+    guest = [@guest1]
+    @room1.add_guest(guest)
+    assert_equal(1, @room1.guests_array)
+  end
 
-  # def test_guest_leave()
-  #   @guests = Guests.new( "Tony" )
-  #   @room1.guest_leave(@guests)
-  #   assert_equal(0, @room1.guests_array)
-  # end
+  def test_guest_leave()
+    guest = [@guest1]
+    @room1.guest_leave(guest)
+    assert_equal(0, @room1.guests_array)
+  end
 
   def test_add_song()
     @room1.add_song(@songs)

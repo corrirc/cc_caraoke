@@ -7,7 +7,6 @@ class Guests
     @name = name
     @cash = cash
     @song = song
-
   end
 
 
