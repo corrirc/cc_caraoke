@@ -1,5 +1,7 @@
 require('minitest/autorun')
 require('minitest/rg')
+# require('pry')
+# binding.pry
 
 require_relative('../rooms.rb')
 require_relative('../guests.rb')
@@ -29,4 +31,31 @@ class RoomsTest < MiniTest::Test
   def test_room_price()
     assert_equal(40, @room1.price)
   end
+
+  def test_guest_array()
+    assert_equal(0, @room1.guests_array)
+  end
+
+  def test_song_array()
+    assert_equal(0, @room1.song_array)
+  end
+
+  # def test_add_guest()
+  #   guest1 = Guests.new( "Tony" )
+  #   @room1.add_guest(guest1)
+  #   assert_equal(1, @room1.guests_array)
+  # end
+
+  # def test_guest_leave()
+  #   @guests = Guests.new( "Tony" )
+  #   @room1.guest_leave(@guests)
+  #   assert_equal(0, @room1.guests_array)
+  # end
+
+  def test_add_song()
+    @room1.add_song(@songs)
+    assert_equal(1, @room1.song_array)
+  end
+
+
 end
