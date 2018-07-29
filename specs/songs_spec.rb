@@ -16,9 +16,6 @@ class SongsTest < MiniTest::Test
 
   def test_song_name()
     assert_equal("Wonderwall", @song3.name)
-
   end
-
-
 
 end
